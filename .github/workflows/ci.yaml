@@ -1,15 +1,15 @@
-name: Test
+name: CI
 on:
   workflow_dispatch:
   pull_request:
   push:
     branches: [main]
 jobs:
-  test-project:
-    name: Test Project
+  build:
+    name: Build
     runs-on: ubuntu-24.04
     steps:
-      - name: Checkout Project
+      - name: Checkout
         uses: actions/checkout@v7.0.1
 
       - name: Setup Go
@@ -17,16 +17,16 @@ jobs:
         with:
           go-version-file: go.mod
 
-      - name: Check Dependencies
+      - name: Check dependencies
         run: go mod tidy && git diff --exit-code HEAD
 
-      - name: Check Formatting
+      - name: Check formatting
         run: go fmt ./... && git diff --exit-code HEAD
 
-      - name: Run Tests
+      - name: Test
         run: go test -v ./... -coverprofile=.cover.out -covermode=atomic -coverpkg=./...
 
-      - name: Check Coverage
+      - name: Check coverage
         uses: vladopajic/go-test-coverage@v2.20.0
         with:
           profile: .cover.out
