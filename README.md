@@ -24,15 +24,14 @@ lefthook install
 
 Replace or extend the template files to fit your project:
 
-- **`pkg/myfibonacci/`** — Rename to your package name, updating the `package` clause in each file to match.
-- **`pkg/myfibonacci/sequence.go`** — Replace with your own library logic, along with its tests in `pkg/myfibonacci/sequence_test.go`.
-- **`go.mod`** — Update the module path to your repository's import path, such as `github.com/username/project`.
+- **`fibonacci.go`** — Replace with your own library logic.
+- **`go.mod`** — Update the module path to your repository's import path, such as `github.com/username/project`, and rename the `package` clause in each file to match its last element.
 - **`LICENSE`** — Replace with your preferred license, or keep the [Unlicense](https://unlicense.org/).
 - **`README.md`** — Replace with a description of your project.
 
 ## Development
 
-Write code in `pkg/`. Test files live alongside source as `*_test.go`. Run the test suite with:
+Write code at the module root. Test files live alongside source as `*_test.go`. Run the test suite with:
 
 ```sh
 go test ./... -coverprofile=.cover.out -coverpkg=./...
