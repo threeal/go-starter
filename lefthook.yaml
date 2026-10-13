@@ -6,5 +6,8 @@ pre-commit:
     - name: tidy dependencies
       run: go mod tidy
 
-    - name: fix formatting
+    - name: fix go formatting
       run: go fmt ./...
+
+    - name: fix formatting
+      run: dprint fmt
