@@ -12,16 +12,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7.0.1
 
+      - name: Setup Lefthook
+        uses: threeal/setup-lefthook-action@v1.0.0
+
       - name: Setup Go
         uses: actions/setup-go@v7.0.0
         with:
           go-version-file: go.mod
 
-      - name: Check dependencies
-        run: go mod tidy && git diff --exit-code HEAD
-
-      - name: Check formatting
-        run: go fmt ./... && git diff --exit-code HEAD
+      - name: Check pre-commit hook
+        run: lefthook run pre-commit --all-files
 
       - name: Test
         run: go test -v ./... -coverprofile=.cover.out -covermode=atomic -coverpkg=./...
