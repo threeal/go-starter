@@ -4,7 +4,7 @@ A minimalistic [GitHub repository template](https://docs.github.com/en/repositor
 
 ## Setup
 
-Install [Lefthook](https://lefthook.dev/), then register the pre-commit hook:
+Install [Lefthook](https://lefthook.dev/) and [dprint](https://dprint.dev/), then register the pre-commit hook:
 
 ```sh
 lefthook install
