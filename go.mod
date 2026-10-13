@@ -1,4 +1,4 @@
-module github.com/threeal/go-starter
+module github.com/leonardo/bonacci
 
 go 1.27.2
 
