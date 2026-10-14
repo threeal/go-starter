@@ -25,6 +25,7 @@ lefthook install
 Replace or extend the template files to fit your project:
 
 - **`cmd/bonacci/`** — Replace or remove the placeholder CLI, renaming the directory to your command's name. Remove this directory and the `go-arg` dependency if your project doesn't need a CLI.
+- **`CLAUDE.md`** — Replace with guidance specific to your project.
 - **`fibonacci.go`** — Replace with your own library logic.
 - **`go.mod`** — Update the module path to your repository's import path, such as `github.com/username/project`, and update the CLI's import and each library file's `package` clause to match.
 - **`LICENSE`** — Replace with your preferred license, or keep the [Unlicense](https://unlicense.org/).
