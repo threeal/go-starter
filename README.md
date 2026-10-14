@@ -1,6 +1,6 @@
 # Go Starter
 
-A minimal template for building a [Go](https://go.dev/) library. Ships pre-configured with formatting, 100% test coverage enforcement, pre-commit hooks, and CI.
+A minimal template for building a [Go](https://go.dev/) library with an optional CLI. Ships pre-configured with formatting, 100% test coverage enforcement, pre-commit hooks, and CI.
 
 ## Getting Started
 
@@ -24,8 +24,9 @@ lefthook install
 
 Replace or extend the template files to fit your project:
 
+- **`cmd/bonacci/`** — Replace or remove the placeholder CLI, renaming the directory to your command's name. Remove this directory and the `go-arg` dependency if your project doesn't need a CLI.
 - **`fibonacci.go`** — Replace with your own library logic.
-- **`go.mod`** — Update the module path to your repository's import path, such as `github.com/username/project`, and rename the `package` clause in each file to match its last element.
+- **`go.mod`** — Update the module path to your repository's import path, such as `github.com/username/project`, and update the CLI's import and each library file's `package` clause to match.
 - **`LICENSE`** — Replace with your preferred license, or keep the [Unlicense](https://unlicense.org/).
 - **`README.md`** — Replace with a description of your project.
 
@@ -46,4 +47,4 @@ After committing, push to `main` or open a pull request from another branch — 
 
 ## Releasing
 
-Push a version tag such as `v1.0.0` and create a GitHub Release. The module is then available to other projects through `go get`, and its documentation appears on [pkg.go.dev](https://pkg.go.dev/).
+Update the CLI's `--version` in `cmd/bonacci/main.go`, push a version tag such as `v1.0.0`, and create a GitHub Release. The module is then available to other projects through `go get`, and its documentation appears on [pkg.go.dev](https://pkg.go.dev/).

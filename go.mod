@@ -2,10 +2,12 @@ module github.com/leonardo/bonacci
 
 go 1.27.2
 
-require github.com/stretchr/testify v1.12.1
+require (
+	github.com/alexflint/go-arg v1.6.1
+	github.com/stretchr/testify v1.12.1
+)
 
 require (
-	github.com/alexflint/go-arg v1.6.0 // indirect
 	github.com/alexflint/go-scalar v1.2.0 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.47.0 // indirect
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream v1.7.20 // indirect
