@@ -37,7 +37,7 @@ Write code at the module root. Test files live alongside source as `*_test.go`. 
 
 ```sh
 go test ./... -coverprofile=.cover.out -coverpkg=./...
-go tool go-test-coverage -p .cover.out -f 100 -k 100 -t 100
+go tool -modfile=tools/go.mod go-test-coverage -p .cover.out -f 100 -k 100 -t 100
 ```
 
 The project enforces 100% code coverage on every run.
