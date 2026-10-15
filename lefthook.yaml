@@ -6,6 +6,10 @@ pre-commit:
     - name: tidy dependencies
       run: go mod tidy
 
+    - name: tidy tool dependencies
+      root: tools/
+      run: go mod tidy
+
     - name: fix go formatting
       run: go fmt ./...
 

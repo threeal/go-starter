@@ -32,4 +32,4 @@ jobs:
         run: go test -v ./... -coverprofile=.cover.out -covermode=atomic -coverpkg=./...
 
       - name: Check coverage
-        run: go tool go-test-coverage -p .cover.out -f 100 -k 100 -t 100
+        run: go tool -modfile=tools/go.mod go-test-coverage -p .cover.out -f 100 -k 100 -t 100
