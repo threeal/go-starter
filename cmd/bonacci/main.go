@@ -6,6 +6,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
 
@@ -27,12 +28,15 @@ func (args) Version() string { // coverage-ignore
 
 func main() { // coverage-ignore
 	var a args
+
 	arg.MustParse(&a)
 
 	sequence := bonacci.FibonacciSequence(a.N)
+
 	terms := make([]string, len(sequence))
 	for i, term := range sequence {
 		terms[i] = strconv.Itoa(term)
 	}
-	fmt.Println(strings.Join(terms, " "))
+
+	_, _ = fmt.Fprintln(os.Stdout, strings.Join(terms, " "))
 }
