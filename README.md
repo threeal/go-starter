@@ -1,6 +1,6 @@
 # Go Starter
 
-A minimal template for building a [Go](https://go.dev/) library with an optional CLI. Ships pre-configured with formatting, 100% test coverage enforcement, pre-commit hooks, and CI.
+A minimal template for building a [Go](https://go.dev/) library with an optional CLI. Ships pre-configured with formatting, linting, 100% test coverage enforcement, pre-commit hooks, and CI.
 
 ## Getting Started
 
