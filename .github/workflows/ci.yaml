@@ -24,6 +24,9 @@ jobs:
         uses: actions/setup-go@v7.0.0
         with:
           go-version-file: go.mod
+          cache-dependency-path: |
+            tools/go.mod
+            go.mod
 
       - name: Check pre-commit hook
         run: lefthook run pre-commit --all-files
