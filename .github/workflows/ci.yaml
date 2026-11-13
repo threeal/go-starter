@@ -32,7 +32,7 @@ jobs:
         run: lefthook run pre-commit --all-files
 
       - name: Test
-        run: go test -v ./... -coverprofile=.cover.out -covermode=atomic -coverpkg=./...
+        run: go test -v ./... -coverprofile=.cover.out -covermode=atomic
 
       - name: Check coverage
         run: go tool -modfile=tools/go.mod go-test-coverage -p .cover.out -f 100 -k 100 -t 100
