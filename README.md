@@ -36,11 +36,10 @@ Replace or extend the template files to fit your project:
 Write code at the module root. Test files live alongside source as `*_test.go`. Run the test suite with:
 
 ```sh
-go test ./... -coverprofile=.cover.out
-go tool -modfile=tools/go.mod go-test-coverage -p .cover.out -f 100 -k 100 -t 100
+go test ./... -cover
 ```
 
-The project enforces 100% code coverage on every run.
+CI enforces 100% code coverage, excluding code marked with a `// coverage-ignore` comment, which `go test` still counts as uncovered.
 
 Each `git commit` runs the pre-commit hook registered during setup, which checks your changes and fixes what it can in place. If it fails, fix any reported issues, re-stage the changed files, and commit again.
 
