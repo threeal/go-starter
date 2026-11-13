@@ -36,7 +36,7 @@ Replace or extend the template files to fit your project:
 Write code at the module root. Test files live alongside source as `*_test.go`. Run the test suite with:
 
 ```sh
-go test ./... -coverprofile=.cover.out -coverpkg=./...
+go test ./... -coverprofile=.cover.out
 go tool -modfile=tools/go.mod go-test-coverage -p .cover.out -f 100 -k 100 -t 100
 ```
 
