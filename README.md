@@ -14,7 +14,7 @@ Install [Go](https://go.dev/), then install dependencies:
 go mod download
 ```
 
-Install [Lefthook](https://lefthook.dev/) and [dprint](https://dprint.dev/), then register the pre-commit hook:
+Install [Lefthook](https://lefthook.dev/), [dprint](https://dprint.dev/), and [golangci-lint](https://golangci-lint.run/welcome/install/), then register the pre-commit hook:
 
 ```sh
 lefthook install
