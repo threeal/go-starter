@@ -18,15 +18,15 @@ type args struct {
 	N int `arg:"positional,required" help:"The number of terms"`
 }
 
-func (args) Description() string { // coverage-ignore
+func (args) Description() string {
 	return "Generate a Fibonacci sequence up to the given number of terms"
 }
 
-func (args) Version() string { // coverage-ignore
+func (args) Version() string {
 	return "0.1.0"
 }
 
-func main() { // coverage-ignore
+func main() {
 	var a args
 
 	arg.MustParse(&a)

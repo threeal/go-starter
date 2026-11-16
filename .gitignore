@@ -3,3 +3,4 @@
 !.gitattributes
 !.gitignore
 !.golangci.yaml
+!.testcoverage.yaml
