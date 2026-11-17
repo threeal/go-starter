@@ -24,7 +24,7 @@ lefthook install
 
 Replace or extend the template files to fit your project:
 
-- **`cmd/bonacci/`** — Replace or remove the placeholder CLI, renaming the directory to your command's name. Remove this directory and the `go-arg` dependency if your project doesn't need a CLI.
+- **`cmd/bonacci/`** — Replace or remove the placeholder CLI, renaming the directory to your command's name. Remove this directory, its `exclude.paths` entry in `.testcoverage.yaml`, and the `go-arg` dependency if your project doesn't need a CLI.
 - **`CLAUDE.md`** — Replace with guidance specific to your project.
 - **`fibonacci.go`** — Replace with your own library logic.
 - **`go.mod`** — Update the module path to your repository's import path, such as `github.com/username/project`, and update the CLI's import and each library file's `package` clause to match.
@@ -39,7 +39,7 @@ Write code at the module root. Test files live alongside source as `*_test.go`. 
 go test ./... -cover
 ```
 
-CI enforces 100% code coverage, excluding code marked with a `// coverage-ignore` comment, which `go test` still counts as uncovered.
+CI enforces 100% code coverage, excluding paths listed under `exclude.paths` in `.testcoverage.yaml`, which `go test` still counts as uncovered.
 
 Each `git commit` runs the pre-commit hook registered during setup, which checks your changes and fixes what it can in place. If it fails, fix any reported issues, re-stage the changed files, and commit again.
 
