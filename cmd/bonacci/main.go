@@ -1,7 +1,4 @@
 // Bonacci is a command-line interface for generating a Fibonacci sequence.
-//
-// This is the placeholder CLI of a project template; remove this directory
-// along with the go-arg dependency if your project doesn't need one.
 package main
 
 import (

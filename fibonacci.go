@@ -1,7 +1,4 @@
 // Package bonacci is an example library for generating a Fibonacci sequence.
-//
-// This is the placeholder library of a project template; replace
-// [FibonacciSequence] with your own logic.
 package bonacci
 
 import "slices"
