@@ -1,6 +1,6 @@
 module github.com/leonardo/bonacci
 
-go 1.27.2
+go 1.27.4
 
 require (
 	github.com/alexflint/go-arg v1.6.1
