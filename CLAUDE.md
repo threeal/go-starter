@@ -12,5 +12,5 @@ A minimal Go library and CLI starter template. Its only application code is a pl
 
 - `lefthook run pre-commit` skips every job when nothing is staged, even ones that ignore the staged file list — pass `--all-files` to run it outside an actual commit.
 - The pre-commit hook fixes files in place, and the run fails if any file changes. Report that failure and leave the fixes for the user to review and re-stage before committing again.
-- The 100% coverage threshold is enforced only in CI, by the go-test-coverage action with the rules in `.testcoverage.yaml`. `go test`'s own percentage reads lower because it still counts the paths that file excludes.
+- `go test` doesn't check coverage — only CI applies the 100% threshold, through the go-test-coverage action with the rules in `.testcoverage.yaml`. `go test -cover` reads lower because it still counts the paths that file excludes.
 - `.gitignore` ignores every dotfile and dotdir (`.*`) — a new one needs an explicit `!` exception there or it silently won't be tracked.

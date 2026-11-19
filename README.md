@@ -8,13 +8,7 @@ Create a new repository from this template on GitHub using [this link](https://g
 
 ## Setup
 
-Install [Go](https://go.dev/), then install dependencies:
-
-```sh
-go mod download
-```
-
-Install [Lefthook](https://lefthook.dev/), [dprint](https://dprint.dev/), and [golangci-lint](https://golangci-lint.run/welcome/install/), then register the pre-commit hook:
+Install [Go](https://go.dev/), [Lefthook](https://lefthook.dev/), [dprint](https://dprint.dev/), and [golangci-lint](https://golangci-lint.run/welcome/install/), then register the pre-commit hook:
 
 ```sh
 lefthook install
@@ -24,18 +18,18 @@ lefthook install
 
 Replace or extend the template files to fit your project:
 
-- **`cmd/bonacci/`** — Replace or remove the placeholder CLI, renaming the directory to your command's name.
+- **`cmd/`** — Replace the placeholder CLI with your own.
 - **`CLAUDE.md`** — Replace with guidance specific to your project.
-- **`fibonacci.go`** — Replace with your own library logic.
-- **`go.mod`** — Rename the module to your repository's import path, such as `github.com/username/project`, then update the imports and package names in the source files to match.
+- **`fibonacci.go`** — Replace the placeholder library and its tests with your own code.
+- **`go.mod`** — Rename the module to your repository's import path, such as `github.com/username/project`, then update the package names to match.
 - **`LICENSE`** — Replace with your preferred license, or keep the [Unlicense](https://unlicense.org/).
 - **`README.md`** — Replace with a description of your project.
 
-If your project doesn't need a CLI, remove `cmd/bonacci/`, its `exclude.paths` entry in `.testcoverage.yaml`, and the `go-arg` dependency in `go.mod`.
+If your project doesn't need a CLI, remove `cmd/bonacci/`, along with its exclusion in `.testcoverage.yaml` and the `go-arg` dependency in `go.mod`.
 
 ## Development
 
-Write code at the module root. Test files live alongside source as `*_test.go`. Run the test suite with:
+Run the tests with:
 
 ```sh
 go test ./... -cover
@@ -49,4 +43,4 @@ After committing, push to `main` or open a pull request from another branch — 
 
 ## Releasing
 
-Update the CLI's `--version` in `cmd/bonacci/main.go`, push a version tag such as `v1.0.0`, and create a GitHub Release. The module is then available to other projects through `go get`, and its documentation appears on [pkg.go.dev](https://pkg.go.dev/).
+Update the CLI's `--version` in `cmd/bonacci/main.go`, push a version tag such as `v1.0.0`, and create a GitHub Release.
